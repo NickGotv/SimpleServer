@@ -1,6 +1,5 @@
 import os
 import utils
-from utils import print_location_error
 
 
 def create_file(content=''):
@@ -37,3 +36,7 @@ def get_metadata(filename):
         return metadata
     except FileNotFoundError:
         print_location_error()
+
+
+def print_location_error():
+    print("File not found.\n")

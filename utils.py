@@ -1,6 +1,6 @@
 import random
 import string
-from file_service import create_file, read_file, delete_file, get_metadata
+from file_service import create_file, read_file, delete_file, get_metadata, print_location_error
 
 FILE_NAME_LENGTH = 10
 LETTERS_DIGITS = string.ascii_letters + string.digits
@@ -39,10 +39,6 @@ def print_option_error():
     print("Choose anohter option.\n")
 
 
-def print_location_error():
-    print("File not found.\n")
-
-
 def app():
     while True:
         try:
@@ -52,13 +48,13 @@ def app():
                 create_file(content)
             elif choice == '2':
                 filename = enter_filename()
-                read_file(filename)
+                print(read_file(filename))
             elif choice == '3':
                 filename = enter_filename()
                 delete_file(filename)
             elif choice == '4':
                 filename = enter_filename()
-                get_metadata(filename)
+                print(get_metadata(filename))
             elif choice == '5':
                 break
             else:
